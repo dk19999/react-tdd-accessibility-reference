@@ -39,6 +39,18 @@ describe("App accessibility", () => {
     const alert = await screen.findByRole("alert");
 
     expect(alert).toHaveTextContent(/invalid input/i);
-});
+  });
 
+  it("announces result updates in a live region", async () => {
+    const user = userEvent.setup();
+    render(<App />);
+
+    const textarea = screen.getByLabelText(/numbers to calculate/i);
+    await user.type(textarea, "1,2,3");
+    await user.click(screen.getByRole("button", { name: /calculate/i }));
+
+    const status = screen.getByRole("status");
+
+    expect(status).toHaveTextContent(/result:\s*6/i);
+  });
 });
