@@ -22,4 +22,8 @@ describe("stringCalculator", () => {
     expect(stringCalculator("1\n2,3")).toBe(6);
   });
 
+  it("throws an error when input contains non-numeric values", () => {
+    expect(() => stringCalculator("1,a,3")).toThrow();
+  });
+
 });
