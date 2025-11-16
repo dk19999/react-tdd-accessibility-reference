@@ -2,6 +2,7 @@ import userEvent from "@testing-library/user-event";
 
 import { render, screen } from "@testing-library/react";
 import App from "../src/App";
+import { axe } from "jest-axe";
 
 describe("App accessibility", () => {
   it("provides an accessible label for the numbers input", () => {
@@ -52,5 +53,11 @@ describe("App accessibility", () => {
     const status = screen.getByRole("status");
 
     expect(status).toHaveTextContent(/result:\s*6/i);
+  });
+
+  it("has no obvious accessibility violations", async () => {
+    const { container } = render(<App />);
+    const results = await axe(container);
+    expect(results).toHaveNoViolations();
   });
 });
