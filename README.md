@@ -74,6 +74,11 @@ The original UI contained several accessibility issues. Fixes were applied incre
 * Wrapped main content in a semantic `<main>` landmark
 * Added automated accessibility checks using jest-axe
 
+# Deployment
+
+Live demo: https://react-tdd-accessibility-reference.vercel.app/
+
+
 # Notes
 
 * Accessibility behavior is validated using React Testing Library and jest-axe
