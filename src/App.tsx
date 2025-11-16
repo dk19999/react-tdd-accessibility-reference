@@ -18,7 +18,10 @@ const App = () => {
 
       <h1 style={{ fontSize: '20px' }}>Enter numbers</h1>
 
+      <label htmlFor="numbers-input">Numbers to calculate</label>
+
       <textarea
+        id="numbers-input"
         style={{ margin: '10px 0', color: '#aaa' }}
         placeholder='Enter numbers'
         value={input}
