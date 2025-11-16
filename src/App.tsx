@@ -1,10 +1,19 @@
 import { useState } from 'react';
+import { stringCalculator } from './stringCalculator';
 
 const App = () => {
   const [input, setInput] = useState('');
-  const [result] = useState(null);
+  const [result, setResult] = useState<number | null>(null);
 
-  const handleCalculate = () => {};
+  const handleCalculate = () => {
+    if (!input.trim()) {
+      setResult(null);
+      return;
+    }
+
+    const value = stringCalculator(input);
+    setResult(value);
+  };
 
   return (
     <div style={{ padding: '20px', backgroundColor: '#fff', color: '#aaa' }}>
@@ -28,7 +37,7 @@ const App = () => {
         onChange={(e) => setInput(e.target.value)}
       />
 
-      <div
+      <button
         onClick={handleCalculate}
         style={{
           padding: '10px',
@@ -37,7 +46,7 @@ const App = () => {
           border: 'none',
         }}>
         Calculate
-      </div>
+      </button>
 
       {result !== null && <p style={{ color: 'green' }}>Result: {result}</p>}
 
