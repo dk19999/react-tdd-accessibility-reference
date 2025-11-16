@@ -1,7 +1,8 @@
 export function stringCalculator(input: string): number {
   if (input === "") return 0;
 
-  const parts = input.split(",");
+  const normalized = input.replace(/\n/g, ",");
+  const parts = normalized.split(",");
   const nums = parts.map(Number);
   return nums.reduce((sum, n) => sum + n, 0);
 }
