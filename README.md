@@ -43,3 +43,38 @@ This project contains a **String Calculator template** built using React. The pr
 
 - Implement the functionality of the String Calculator following TDD best practices.
 - Resolve accessibility issues in the `App.tsx`.
+
+# TDD Implementation
+
+The String Calculator was developed strictly through test-driven development
+
+## Implemented behaviors
+
+* Empty string returns `0`
+* Single number returns its numeric value
+* Comma-separated values are summed
+* Newline delimiters are supported
+* Invalid inputs throw errors
+
+All behaviors are covered by unit tests.
+
+# Accessibility Improvements
+
+The original UI contained several accessibility issues. Fixes were applied incrementally and verified with both behavior tests and automated checks.
+
+## Changes include
+
+* Added an accessible `<label>` for the textarea
+* Replaced the non-interactive `div` with a real `<button>`
+* Implemented dynamic error feedback using `role="alert"`
+* Announced result updates using an `aria-live` region
+* Added descriptive `alt` text to the image
+* Corrected heading structure (`h1` followed by `h2`)
+* Improved text contrast to meet WCAG AA requirements
+* Wrapped main content in a semantic `<main>` landmark
+* Added automated accessibility checks using jest-axe
+
+# Notes
+
+* Accessibility behavior is validated using React Testing Library and jest-axe
+* The interface works correctly for screen readers and general users
