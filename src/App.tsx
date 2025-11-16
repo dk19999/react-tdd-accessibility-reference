@@ -31,9 +31,9 @@ const App = () => {
         alt="Illustration"
       />
 
-      <h2>String Calculator</h2>
+      <h1>String Calculator</h1>
 
-      <h1 style={{ fontSize: "20px" }}>Enter numbers</h1>
+      <h2 style={{ fontSize: "20px" }}>Enter numbers</h2>
 
       <label htmlFor="numbers-input">Numbers to calculate</label>
 
