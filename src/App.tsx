@@ -23,7 +23,9 @@ const App = () => {
   };
 
   return (
-    <main style={{ padding: "20px", backgroundColor: "#fff", color: "#707070" }}>
+    <main
+      style={{ padding: "20px", backgroundColor: "#fff", color: "#707070" }}
+    >
       <img
         src="https://images.unsplash.com/photo-1594352161389-11756265d1b5?q=80&w=2574&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
         width={600}
@@ -58,7 +60,7 @@ const App = () => {
       </button>
 
       <div role="status" aria-live="polite" aria-atomic="true">
-        {result !== null && <p>Result: {result}</p>}
+        {result !== null && <p style={{ color: "green" }}>Result: {result}</p>}
       </div>
 
       {error && (
