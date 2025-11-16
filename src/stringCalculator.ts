@@ -1,3 +1,4 @@
-export function stringCalculator(_input: string): number {
-  throw new Error("Not implemented");
+export function stringCalculator(input: string): number {
+  if (input === "") return 0;
+  return Number(input);
 }
