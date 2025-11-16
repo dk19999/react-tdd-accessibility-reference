@@ -50,10 +50,10 @@ const App = () => {
       <button
         onClick={handleCalculate}
         style={{
+          border: "2px solid ButtonText",
           padding: "10px",
           backgroundColor: "#007EA8",
           color: "#fff",
-          border: "none",
         }}
       >
         Calculate
